@@ -24,7 +24,7 @@ st.set_page_config(
 # --- Info ---
 pg1 = st.Page(
     "pages/What_Is_DataModeling.py",
-    title="What_Is_DataModeling",
+    title="What Is DataModeling?",
     icon=":material/cognition:",
     default=True,
 )
@@ -49,7 +49,7 @@ pg = st.navigation(
     {
         "Info": [What_Is_DataModeling],
         "How": [Detail_Steps_to_Build_a_Data_Model],
-        "Examples": [Card_Account_system],
+        "Examples": [Card_Account_system]
     }
 )
 
