@@ -47,9 +47,9 @@ pg3 = st.Page(
 
 pg = st.navigation(
     {
-        "Info": [What_Is_DataModeling],
-        "How": [Detail_Steps_to_Build_a_Data_Model],
-        "Examples": [Card_Account_system]
+        "Info": [pg1],
+        "How": [pg2],
+        "Examples": [pg3]
     }
 )
 
