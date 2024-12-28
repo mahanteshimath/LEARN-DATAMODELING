@@ -12,13 +12,9 @@ st.title("Data Modeling Process Flowchart")
 st.subheader("Visualization of the Phases in Data Modeling")
 col1, col2 = st.columns(2, gap="small")
 with col1:
-   with open("./src/steps.txt", "r") as file:
-      html_content = file.read()
-
-
-
-
-components.html(html_content, width=800, height=600, scrolling=True)
+      with open("./src/steps.txt", "r") as file:
+         html_content = file.read()
+   components.html(html_content, width=800, height=600, scrolling=True)
 
 
 
