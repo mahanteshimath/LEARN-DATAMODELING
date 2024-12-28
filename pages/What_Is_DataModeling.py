@@ -119,7 +119,7 @@ erDiagram
     ORDER ||--o{ ORDER_ITEM : contains
     PRODUCT ||--o{ ORDER_ITEM : referenced by
 """
-st.components.v1.html(mermaid_html(mermaid_code_ecommerce), height=400)
+st.components.v1.html(mermaid_html(mermaid_code_ecommerce), height=400,scrolling=True)
 
 # Markdown for Conclusion
 st.markdown("""
