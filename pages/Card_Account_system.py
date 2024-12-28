@@ -1,9 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import time
-import snowflake.connector
-from snowflake.connector.pandas_tools import write_pandas
+import streamlit.components.v1 as components
 
 
 st.logo(
