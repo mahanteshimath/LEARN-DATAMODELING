@@ -1,1 +1,1 @@
-This repo some practicle data modeling examples
+This repo solves some realtime data modeling
