@@ -1,1 +1,1 @@
-###This repo is to explain learning
+This repo some practicle data modeling examples
