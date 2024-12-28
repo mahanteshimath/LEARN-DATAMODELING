@@ -88,6 +88,77 @@ def execute_query(query):
     except Exception as e:
         st.error(f"Error executing query: {str(e)}")
         return None
+import streamlit as st
+
+# Function to embed Mermaid diagrams as HTML
+def mermaid_html(mermaid_code):
+    return f"""
+    <div class="mermaid">
+    {mermaid_code}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({{ startOnLoad: true }});
+    </script>
+    """
+
+# Mermaid flowchart code
+flowchart_code = """
+flowchart TD
+    subgraph "Phase 1: Requirements Gathering"
+        A[Start] --> B[Identify Business Requirements]
+        B --> C[Document Data Sources]
+        C --> D[Define Data Objects]
+        D --> E[Identify Relationships]
+    end
+
+    subgraph "Phase 2: Conceptual Modeling"
+        E --> F[Create Entity List]
+        F --> G[Define Entity Relationships]
+        G --> H[Document Business Rules]
+        H --> I[Review with Stakeholders]
+    end
+
+    subgraph "Phase 3: Logical Modeling"
+        I --> J[Define Attributes]
+        J --> K[Establish Primary Keys]
+        K --> L[Set Foreign Keys]
+        L --> M[Apply Normalization]
+        M --> N[Validate Business Rules]
+    end
+
+    subgraph "Phase 4: Physical Modeling"
+        N --> O[Choose Database Platform]
+        O --> P[Define Tables and Columns]
+        P --> Q[Set Data Types]
+        Q --> R[Create Indexes]
+        R --> S[Implement Constraints]
+    end
+
+    subgraph "Phase 5: Implementation"
+        S --> T[Generate DDL Scripts]
+        T --> U[Create Test Data]
+        U --> V[Perform Testing]
+        V --> W[Deploy to Production]
+    end
+
+    style A fill:#f9f,stroke:#333
+    style W fill:#9f9,stroke:#333
+    
+    %% Add relationship lines
+    B --> |"Inputs"| F
+    G --> |"Influences"| K
+    H --> |"Guides"| M
+    M --> |"Shapes"| P
+    N --> |"Validates"| S
+"""
+
+# Streamlit content
+st.title("Data Modeling Process Flowchart")
+st.subheader("Visualization of the Phases in Data Modeling")
+
+# Display the Mermaid Diagram
+st.components.v1.html(mermaid_html(flowchart_code), height=800)
 
 
 
