@@ -10,9 +10,10 @@ st.logo(
 
 st.title("Data Modeling Process Flowchart")
 st.subheader("Visualization of the Phases in Data Modeling")
-
-with open("./src/steps.txt", "r") as file:
-    html_content = file.read()
+col1, col2 = st.columns(2, gap="small")
+with col1:
+   with open("./src/steps.txt", "r") as file:
+      html_content = file.read()
 
 
 
@@ -22,111 +23,111 @@ components.html(html_content, width=800, height=600, scrolling=True)
 
 
 
+with col2:
+   st.markdown("""
+   # Detailed Data Modeling Steps
 
-st.markdown("""
-# Detailed Data Modeling Steps
+   ## Phase 1: Requirements Gathering
+   1. Identify Business Requirements
+      - Interview stakeholders
+      - Review existing documentation
+      - Define scope and objectives
+      - Document use cases
 
-## Phase 1: Requirements Gathering
-1. Identify Business Requirements
-   - Interview stakeholders
-   - Review existing documentation
-   - Define scope and objectives
-   - Document use cases
+   2. Document Data Sources
+      - List all current data sources
+      - Identify data formats
+      - Document data volumes
+      - Note update frequencies
 
-2. Document Data Sources
-   - List all current data sources
-   - Identify data formats
-   - Document data volumes
-   - Note update frequencies
+   3. Define Data Objects
+      - List main business entities
+      - Define entity characteristics
+      - Document dependencies
+      - Identify critical data elements
 
-3. Define Data Objects
-   - List main business entities
-   - Define entity characteristics
-   - Document dependencies
-   - Identify critical data elements
+   4. Identify Relationships
+      - Map business processes
+      - Document data flow
+      - Identify entity interactions
+      - Define cardinality rules
 
-4. Identify Relationships
-   - Map business processes
-   - Document data flow
-   - Identify entity interactions
-   - Define cardinality rules
+   ## Phase 2: Conceptual Modeling
+   1. Create Entity List
+      - Name entities clearly
+      - Define entity purposes
+      - Document entity descriptions
+      - Validate with business users
 
-## Phase 2: Conceptual Modeling
-1. Create Entity List
-   - Name entities clearly
-   - Define entity purposes
-   - Document entity descriptions
-   - Validate with business users
+   2. Define Entity Relationships
+      - Map entity connections
+      - Define relationship types
+      - Document cardinality
+      - Create relationship matrix
 
-2. Define Entity Relationships
-   - Map entity connections
-   - Define relationship types
-   - Document cardinality
-   - Create relationship matrix
+   3. Document Business Rules
+      - Define data constraints
+      - Document validation rules
+      - Specify calculations
+      - List dependencies
 
-3. Document Business Rules
-   - Define data constraints
-   - Document validation rules
-   - Specify calculations
-   - List dependencies
+   ## Phase 3: Logical Modeling
+   1. Define Attributes
+      - List all attributes per entity
+      - Define data domains
+      - Document descriptions
+      - Set nullable properties
 
-## Phase 3: Logical Modeling
-1. Define Attributes
-   - List all attributes per entity
-   - Define data domains
-   - Document descriptions
-   - Set nullable properties
+   2. Establish Primary Keys
+      - Choose key strategy
+      - Define composite keys
+      - Document key constraints
+      - Set uniqueness rules
 
-2. Establish Primary Keys
-   - Choose key strategy
-   - Define composite keys
-   - Document key constraints
-   - Set uniqueness rules
+   3. Apply Normalization
+      - Apply 1NF (First Normal Form)
+      - Progress to 2NF
+      - Implement 3NF
+      - Consider BCNF where needed
 
-3. Apply Normalization
-   - Apply 1NF (First Normal Form)
-   - Progress to 2NF
-   - Implement 3NF
-   - Consider BCNF where needed
+   ## Phase 4: Physical Modeling
+   1. Choose Database Platform
+      - Select DBMS
+      - Consider scalability
+      - Review performance needs
+      - Check compatibility
 
-## Phase 4: Physical Modeling
-1. Choose Database Platform
-   - Select DBMS
-   - Consider scalability
-   - Review performance needs
-   - Check compatibility
+   2. Define Tables and Columns
+      - Create table definitions
+      - Set column properties
+      - Define default values
+      - Document table relationships
 
-2. Define Tables and Columns
-   - Create table definitions
-   - Set column properties
-   - Define default values
-   - Document table relationships
+   3. Implement Constraints
+      - Set primary keys
+      - Define foreign keys
+      - Add check constraints
+      - Create unique constraints
 
-3. Implement Constraints
-   - Set primary keys
-   - Define foreign keys
-   - Add check constraints
-   - Create unique constraints
+   ## Phase 5: Implementation
+   1. Generate DDL Scripts
+      - Create table scripts
+      - Define indexes
+      - Set constraints
+      - Document deployment steps
 
-## Phase 5: Implementation
-1. Generate DDL Scripts
-   - Create table scripts
-   - Define indexes
-   - Set constraints
-   - Document deployment steps
+   2. Testing
+      - Create test data
+      - Validate relationships
+      - Test constraints
+      - Performance testing
 
-2. Testing
-   - Create test data
-   - Validate relationships
-   - Test constraints
-   - Performance testing
-
-3. Deployment
-   - Review change impact
-   - Schedule deployment
-   - Execute scripts
-   - Validate deployment
-""")
+   3. Deployment
+      - Review change impact
+      - Schedule deployment
+      - Execute scripts
+      - Validate deployment
+   """)
 
 
 
