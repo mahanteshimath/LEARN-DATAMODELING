@@ -38,9 +38,15 @@ pg2 = st.Page(
 
 #Examples
 pg3 = st.Page(
-    "pages/Card_Account_system.py",
-    title="Card Account system",
+    "pages/Card_Account_System.py",
+    title="Card Account System",
     icon=":material/credit_card:",
+)
+
+pg4 = st.Page(
+    "pages/Uber_Like_System.py",
+    title="Uber Like System",
+    icon=":material/car_rental:",
 )
 
 
@@ -49,7 +55,7 @@ pg = st.navigation(
     {
         "Info": [pg1],
         "How": [pg2],
-        "Examples": [pg3]
+        "Examples": [pg3, pg4],
     }
 )
 
