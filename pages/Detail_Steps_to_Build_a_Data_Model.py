@@ -1,9 +1,17 @@
 import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import time
-import snowflake.connector
-from snowflake.connector.pandas_tools import write_pandas
+import streamlit.components.v1 as components
+
+
+
+# Load the HTML content from the file
+with open("./src/steps.txt", "r") as file:
+    html_content = file.read()
+
+
+
+
+# Display the HTML content as an embedded diagram in Streamlit
+components.html(html_content, width=800, height=600)
 
 
 st.logo(
