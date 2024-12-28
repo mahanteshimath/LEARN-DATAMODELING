@@ -17,7 +17,6 @@ with open("./src/steps.txt", "r") as file:
 
 
 
-# Display the HTML content as an embedded diagram in Streamlit
 components.html(html_content, width=800, height=600, scrolling=True)
 
 
