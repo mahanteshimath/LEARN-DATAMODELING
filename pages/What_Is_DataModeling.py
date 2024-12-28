@@ -1,11 +1,22 @@
 import streamlit as st
-from streamlit_mermaid import mermaid
+
+# Function to embed Mermaid diagrams
+def mermaid_html(mermaid_code):
+    return f"""
+    <div class="mermaid">
+    {mermaid_code}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({{ startOnLoad: true }});
+    </script>
+    """
 
 # Streamlit app title
 st.title("Understanding Data Modeling")
 
 # Markdown content
-markdown_content = """
+st.markdown("""
 ### What is Data Modeling?
 
 **Data Modeling** is the process of creating a visual representation of a system or dataset to define its structure, relationships, and constraints. It is a critical step in database design and system architecture, providing a blueprint for organizing and managing data efficiently.
@@ -36,12 +47,11 @@ markdown_content = """
 
 ---
 
-### **Visualization of Data Modeling Levels**
-"""
-st.markdown(markdown_content)
+### Visualization of Data Modeling Levels
+""")
 
 # Mermaid diagram for data modeling levels
-mermaid_diagram_levels = """
+mermaid_code_levels = """
 graph TD
     A[Conceptual Data Model] --> B[Logical Data Model]
     B --> C[Physical Data Model]
@@ -60,10 +70,10 @@ graph TD
     C --> C1
     C --> C2
 """
-mermaid(mermaid_diagram_levels)
+st.components.v1.html(mermaid_html(mermaid_code_levels), height=400)
 
 # Markdown for Benefits and Example
-markdown_content_2 = """
+st.markdown("""
 ---
 
 ### **Benefits of Data Modeling**
@@ -75,11 +85,10 @@ markdown_content_2 = """
 ---
 
 ### **Example: E-commerce Data Model**
-"""
-st.markdown(markdown_content_2)
+""")
 
 # Mermaid diagram for E-commerce Data Model
-mermaid_diagram_ecommerce = """
+mermaid_code_ecommerce = """
 erDiagram
     CUSTOMER {
         int CustomerID
@@ -110,35 +119,17 @@ erDiagram
     ORDER ||--o{ ORDER_ITEM : contains
     PRODUCT ||--o{ ORDER_ITEM : referenced by
 """
-mermaid(mermaid_diagram_ecommerce)
+st.components.v1.html(mermaid_html(mermaid_code_ecommerce), height=400)
 
 # Markdown for Conclusion
-markdown_content_3 = """
+st.markdown("""
 ---
 
 ### Conclusion
 
 Data modeling is essential for designing robust and scalable systems, ensuring that data is structured efficiently and aligns with business goals. Whether for small applications or enterprise-level systems, understanding its types and techniques is key to success.
-"""
-st.markdown(markdown_content_3)
+""")
 
-
-
-st.markdown(
-    '''
-    <style>
-    .streamlit-expanderHeader {
-        background-color: blue;
-        color: white; # Adjust this for expander header color
-    }
-    .streamlit-expanderContent {
-        background-color: blue;
-        color: white; # Expander content color
-    }
-    </style>
-    ''',
-    unsafe_allow_html=True
-)
 
 footer="""<style>
 
